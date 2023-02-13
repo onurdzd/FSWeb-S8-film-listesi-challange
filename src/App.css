@@ -50,6 +50,11 @@ h1 {
   padding: 0.1rem;
 }
 
+.detayUyari {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
 .posterDiv {
   width: 50%;
 }

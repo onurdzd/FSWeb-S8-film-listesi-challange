@@ -57,7 +57,12 @@ function App() {
               <button onClick={() => ekle()}>Ekle</button>
             </div>
           </div>
-        ) : null}
+        ) : (
+          <div className="detayUyari">
+            <h1>Dizi Detay</h1>
+            Önce popüler diziler içinden seçim yapın
+          </div>
+        )}
       </div>
       <div className="izlemeListesi">
         <h1>İzleme Listesi</h1>
@@ -74,7 +79,9 @@ function App() {
               </div>
             ))}
           </div>
-        ) : null}
+        ) : (
+          <div className="izlemeListesiIsim">Henüz bir film eklemediniz</div>
+        )}
       </div>
     </div>
   );
