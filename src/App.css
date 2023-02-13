@@ -33,6 +33,7 @@ h1 {
   height: 90vh;
   overflow: hidden;
   overflow-y: scroll;
+  list-style: decimal-leading-zero;
 }
 
 
