@@ -1,23 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+
+
 body {
   font-size: 10px;
-  background-color: antiquewhite;
+  font-family: 'PT Sans', sans-serif;
+  box-sizing: border-box;
 }
 
 h1 {
   font-size: 2rem;
+  color: #8bc34a;
+  ;
+  text-align: center;
 }
 
 .anaSayfaLayout {
   display: flex;
   justify-content: space-evenly;
   width: 90vw;
-  max-width: 1260px;
+  height: 100vh;
+  max-width: 1360px;
   margin: 0 auto;
 }
 
 .populerDiziler {
   width: 30%;
+  background-color: white;
 }
+
+.populerDiziler ul {
+  height: 90vh;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
 
 .populerDizilerIcerik {
   font-size: 1.3rem;
@@ -41,18 +58,20 @@ h1 {
   flex-direction: column;
   justify-content: center;
   padding: 0.5rem;
+  background-image: url("./img/dizi-detay2.jpg");
+  background-size: cover;
 }
 
 .diziDetayCard {
   width: 100%;
   display: flex;
-  margin: 0 auto;
   padding: 0.1rem;
 }
 
 .detayUyari {
   font-size: 1.2rem;
   text-align: center;
+  color: #8bc34a;
 }
 
 .posterDiv {
@@ -67,12 +86,13 @@ h1 {
   width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   font-size: 1.3rem;
   font-weight: 600;
-  margin-bottom: 1%;
   margin-left: 1%;
   padding-left: 0.3rem;
+  color: #8bc34a;
+
 }
 
 .detayDizimIsim {
@@ -85,11 +105,13 @@ h1 {
 
 .bilgilerDiv button {
   width: 50%;
-  background-color: blue;
+  background-color: #ff5722;
   border-radius: 1rem;
   font-size: 1rem;
+  font-weight: 400;
   color: white;
   cursor: pointer;
+
 }
 
 .bilgilerDiv button:hover {
@@ -99,6 +121,9 @@ h1 {
 
 .izlemeListesi {
   width: 30%;
+  background-color: brown;
+  background-image: url("./img/dizi-list.jpg");
+  background-size: cover;
 }
 
 .izlemeListesiFlex {
@@ -114,19 +139,39 @@ h1 {
 .izlemeListesiIsim {
   font-size: 1.3rem;
   font-weight: 500;
-  width: 100%;
+  width: 80%;
+  text-align: center;
+}
+
+.izlemeListesiButtonDiv {
+  margin-right: 20%;
 }
 
 .izlemeListesi button {
-  background-color: red;
+  background-color: #ff5722;
   border-radius: 1rem;
   font-size: 1rem;
   color: white;
   cursor: pointer;
-  margin-left: 5%;
 }
 
 .izlemeListesi button:hover {
   background-color: white;
-  color: red;
+  color: #ff5722;
+}
+
+.searchForm {
+  margin: 0 auto;
+  margin-bottom: 10%;
+  width: 60%;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.inputForm {
+  font-size: 1rem;
+  padding: 0.3rem;
+  border-radius: 1rem;
+  width: 100%;
 }

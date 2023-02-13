@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Search from "./Search";
 
 function App() {
   const [data, setData] = useState([]);
@@ -29,7 +30,7 @@ function App() {
     <div className="anaSayfaLayout">
       <div className="populerDiziler">
         <h1>Popüler Diziler</h1>
-        <div className="populerDizilerIcerik">
+        <ul className="populerDizilerIcerik">
           {" "}
           {data.map((item, index) => (
             <div
@@ -37,12 +38,17 @@ function App() {
               className="populerDiziIsım"
               onClick={() => setSecilenDizi(item)}
             >
-              {item.name}
+              <li>{item.name}</li>
             </div>
           ))}{" "}
-        </div>
+        </ul>
       </div>
       <div className="diziDetayMainDiv">
+        <Search
+          setSecilenDizi={setSecilenDizi}
+          secilenDizi={secilenDizi}
+          data={data}
+        ></Search>
         {secilenDizi !== "" ? (
           <div className="diziDetayCard">
             <div className="posterDiv">
@@ -60,7 +66,9 @@ function App() {
         ) : (
           <div className="detayUyari">
             <h1>Dizi Detay</h1>
-            Önce popüler diziler içinden seçim yapın
+            <br></br>
+            <br></br>
+            Önce popüler dizi seçimi yapın
           </div>
         )}
       </div>
