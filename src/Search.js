@@ -11,11 +11,7 @@ const Search = ({ setSecilenDizi, data }) => {
   };
 
   useEffect(() => {
-    if (aramaSonuc) {
-      setSecilenDizi(aramaSonuc);
-    } else {
-      setSecilenDizi("");
-    }
+    aramaSonuc ? setSecilenDizi(aramaSonuc) : setSecilenDizi("");
   }, [aramaSonuc]);
 
   return (
