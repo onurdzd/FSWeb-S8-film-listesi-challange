@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const Search = ({ setSecilenDizi, secilenDizi, data }) => {
+const Search = ({ setSecilenDizi, data }) => {
+  const [aramaSonuc, setAramaSonuc] = useState();
   const handleSearch = (e) => {
-    const aramaSonuc = data.find((item) =>
-      item.name.toLowerCase().includes(e.target.value.toLowerCase())
+    setAramaSonuc(
+      data.find((item) =>
+        item.name.toLowerCase().includes(e.target.value.toLowerCase())
+      )
     );
+  };
 
+  useEffect(() => {
     if (aramaSonuc) {
       setSecilenDizi(aramaSonuc);
     } else {
       setSecilenDizi("");
     }
-  };
+  }, [aramaSonuc]);
 
   return (
     <form className="searchForm">

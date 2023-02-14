@@ -35,7 +35,7 @@ function App() {
           {data.map((item, index) => (
             <div
               key={index}
-              className="populerDiziIsım"
+              className="populerDiziIsim"
               onClick={() => setSecilenDizi(item)}
             >
               <li>{item.name}</li>
