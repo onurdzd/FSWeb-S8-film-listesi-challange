@@ -36,7 +36,6 @@ h1 {
   list-style: decimal-leading-zero;
 }
 
-
 .populerDizilerIcerik {
   font-size: 1.3rem;
 }
@@ -48,7 +47,7 @@ h1 {
   max-width: 300px;
 }
 
-.populerDiziIsım:hover {
+.populerDiziIsim:hover {
   background-color: black;
   color: white;
 }
