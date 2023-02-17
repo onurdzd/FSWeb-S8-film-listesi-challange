@@ -66,6 +66,7 @@ function App() {
           data={data}
           ekle={ekle}
           detayaGit={detayaGit}
+          page={page}
         ></DiziCard>
         <IzlemeListesi listeDizi={listeDizi} sil={sil}></IzlemeListesi>
       </Route>

@@ -1,28 +1,39 @@
 import React from "react";
 import Search from "./Search";
 
-const DiziCard = ({ setSecilenDizi, secilenDizi, data, ekle, detayaGit }) => {
+const DiziCard = ({
+  setSecilenDizi,
+  secilenDizi,
+  data,
+  ekle,
+  detayaGit,
+  page,
+}) => {
   return (
-    <div className="diziDetayMainDiv">
+    <div className="diziCardMain">
       <Search
         setSecilenDizi={setSecilenDizi}
         secilenDizi={secilenDizi}
         data={data}
+        page={page}
       ></Search>
       {secilenDizi !== "" ? (
-        <div className="diziDetayCard">
-          <div className="posterDiv">
-            <img src={secilenDizi.image_thumbnail_path} alt="dizi resim"></img>
+        <div className="diziCardAltDiv">
+          <div className="diziCardImgDiv">
+            <img
+              src={secilenDizi.image_thumbnail_path}
+              alt="diziCardImg resim"
+            ></img>
           </div>
-          <div className="bilgilerDiv">
-            <div className="detayDizimIsim">{secilenDizi.name}</div>
-            <div className="detayDizimUlke">{secilenDizi.country}</div>
+          <div className="diziCardBilgilerDiv">
+            <div className="diziCardBilgilerIsim">{secilenDizi.name}</div>
+            <div className="diziCardBilgilerUlke">{secilenDizi.country}</div>
             <button onClick={() => ekle()}>Ekle</button>
             <button onClick={detayaGit}>Detay</button>
           </div>
         </div>
       ) : (
-        <div className="detayUyari">Önce popüler dizi seçimi yapın</div>
+        <div className="diziCardYoksaUyari">Önce popüler dizi seçimi yapın</div>
       )}
     </div>
   );

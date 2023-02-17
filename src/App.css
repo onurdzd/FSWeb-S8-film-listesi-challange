@@ -23,14 +23,14 @@ h1 {
   margin: 0 auto;
 }
 
-.populerDiziler {
+.populerDizilerMain {
   flex: 1.5;
   background-color: white;
   padding: 1rem;
   border-radius: 2rem;
 }
 
-.populerDiziler ul {
+.populerDizilerMain ul {
   height: 73vh;
   overflow: auto;
   list-style: decimal-leading-zero;
@@ -52,7 +52,21 @@ h1 {
   color: white;
 }
 
-.diziDetayMainDiv {
+.pageNumberDiv {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.pageNumberDiv button {
+  background-color: #ff5722;
+  color: white;
+  cursor: pointer;
+}
+
+.diziCardMain {
   flex: 2;
   display: flex;
   flex-direction: column;
@@ -60,33 +74,58 @@ h1 {
   padding: 0.5rem;
 }
 
-.diziDetayCard {
+.searchForm {
+  margin: 0 auto;
+  margin-bottom: 10%;
+  width: 60%;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.searchBaslik {
+  color: white;
+  background-color: #00000080;
+  border-radius: 1rem;
+  padding: 0.3rem;
+  width: 100%;
+}
+
+.searchInputForm {
+  font-size: 1rem;
+  padding: 0.3rem;
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.diziCardAltDiv {
   width: 90%;
   display: flex;
   margin: 0 auto;
   border-radius: 2rem;
   background-color: #ffffff;
   box-shadow: -3px 3px 10px 1px;
+  min-height: 40vh;
 }
 
-.detayUyari {
+.diziCardYoksaUyari {
   font-size: 1.2rem;
   text-align: center;
   color: white;
   background-color: #ff000080;
 }
 
-.posterDiv {
+.diziCardImgDiv {
   flex: 1;
+  display: flex;
 }
 
-.posterDiv img {
+.diziCardImgDiv img {
   padding: 0.5rem;
   border-radius: 2rem;
   width: 100%;
 }
 
-.bilgilerDiv {
+.diziCardBilgilerDiv {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -98,15 +137,12 @@ h1 {
   padding-bottom: 1rem;
 }
 
-.detayDizimIsim {
+.diziCardBilgilerIsim,
+.diziCardBilgilerUlke {
   padding: 0.5rem 0;
 }
 
-.detayDizimUlke {
-  padding: 0.5rem 0;
-}
-
-.bilgilerDiv button {
+.diziCardBilgilerDiv button {
   width: 50%;
   background-color: #ff5722;
   font-size: 1rem;
@@ -116,24 +152,10 @@ h1 {
   margin-bottom: 1%;
 }
 
-.bilgilerDiv button:hover {
+.diziCardBilgilerDiv button:hover {
   background-color: white;
-  color: blue;
-}
-
-.izlemeListesi {
-  flex: 1.5;
-  background-color: white;
-  padding: 1rem;
-  border-radius: 2rem;
-}
-
-.izlemeListesiFlex {
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
-  height: 75vh;
-  padding: 0.5rem;
+  color: #ff5722;
+  ;
 }
 
 .detaySayfasiKapsayiciDiv {
@@ -164,12 +186,19 @@ h1 {
   cursor: pointer;
 }
 
-.pageDiv {
+.izlemeListesiMain {
+  flex: 1.5;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.izlemeListesiAltDiv {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  font-size: 1rem;
-  font-weight: bold;
+  flex-direction: column;
+  overflow: auto;
+  height: 75vh;
+  padding: 0.5rem;
 }
 
 .izlemeListesiCardDiv {
@@ -179,14 +208,16 @@ h1 {
   box-shadow: -3px 3px 10px 1px;
   border-radius: 1rem;
   margin-bottom: 0.5rem;
+  min-height: 20vh;
 }
 
-.izlemeListesiAltDiv {
+.izlemeListesiAltDiv2 {
   flex: 2;
 }
 
 .izlemeListesiResimDiv {
   flex: 1;
+
 }
 
 .izlemeListesiResimDiv img {
@@ -206,7 +237,7 @@ h1 {
   padding-top: 0.5rem;
 }
 
-.izlemeListesi button {
+.izlemeListesiMain button {
   background-color: #ff5722;
   font-size: 1rem;
   width: 35%;
@@ -214,30 +245,7 @@ h1 {
   cursor: pointer;
 }
 
-.izlemeListesi button:hover {
+.izlemeListesiMain button:hover {
   background-color: white;
   color: #ff5722;
-}
-
-.searchForm {
-  margin: 0 auto;
-  margin-bottom: 10%;
-  width: 60%;
-  text-align: center;
-  font-size: 1rem;
-}
-
-.searchBaslik {
-  color: white;
-  background-color: #00000080;
-  border-radius: 1rem;
-  padding: 0.3rem;
-  width: 100%;
-}
-
-.inputForm {
-  font-size: 1rem;
-  padding: 0.3rem;
-  border-radius: 1rem;
-  width: 100%;
 }

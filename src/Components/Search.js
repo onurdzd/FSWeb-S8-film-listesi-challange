@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Search = ({ setSecilenDizi, data }) => {
+const Search = ({ setSecilenDizi, data, page }) => {
   const [aramaSonuc, setAramaSonuc] = useState();
   const handleSearch = (e) => {
     if (e.target.value) {
@@ -20,9 +20,9 @@ const Search = ({ setSecilenDizi, data }) => {
 
   return (
     <form className="searchForm">
-      <p className="searchBaslik"> Dizi arayabilirsin</p>
+      <p className="searchBaslik">{page}. sayfada Dizi ara</p>
       <input
-        className="inputForm"
+        className="searchInputForm"
         type="text"
         placeholder="Ara"
         onChange={(e) => handleSearch(e)}

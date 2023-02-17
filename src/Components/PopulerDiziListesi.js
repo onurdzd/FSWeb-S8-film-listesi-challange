@@ -1,9 +1,8 @@
 import React from "react";
 
 const PopulerDiziListesi = ({ data, setSecilenDizi, page, pageDegis }) => {
-  console.log(page);
   return (
-    <div className="populerDiziler">
+    <div className="populerDizilerMain">
       <h1>Popüler Diziler</h1>
       <ul className="populerDizilerIcerik">
         {" "}
@@ -17,7 +16,7 @@ const PopulerDiziListesi = ({ data, setSecilenDizi, page, pageDegis }) => {
           </div>
         ))}{" "}
       </ul>
-      <div className="pageDiv">
+      <div className="pageNumberDiv">
         <div>
           <button onClick={() => pageDegis(page - 1)} disabled={page === 1}>
             Önceki
