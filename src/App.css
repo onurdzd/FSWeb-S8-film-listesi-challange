@@ -26,8 +26,10 @@ h1 {
 .populerDizilerMain {
   flex: 1.5;
   background-color: white;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .populerDizilerMain ul {
@@ -54,16 +56,27 @@ h1 {
 
 .pageNumberDiv {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   font-size: 1rem;
   font-weight: bold;
+  width: 100%;
+}
+
+.pageNumber {
+  margin: 0 1%;
 }
 
 .pageNumberDiv button {
   background-color: #ff5722;
   color: white;
   cursor: pointer;
+  width: 100%;
+}
+
+.pageNumberDiv button :disabled {
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .diziCardMain {
@@ -104,7 +117,7 @@ h1 {
   border-radius: 2rem;
   background-color: #ffffff;
   box-shadow: -3px 3px 10px 1px;
-  min-height: 50vh;
+
 }
 
 .diziCardYoksaUyari {
@@ -132,9 +145,9 @@ h1 {
   justify-content: flex-end;
   font-size: 1.3rem;
   font-weight: 600;
-  padding-left: 1rem;
+  padding-left: 5%;
   color: black;
-  padding-bottom: 1rem;
+  padding-bottom: 5%;
 }
 
 .diziCardBilgilerIsim,
@@ -191,6 +204,8 @@ h1 {
   background-color: white;
   padding: 1rem;
   border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .izlemeListesiAltDiv {
@@ -246,4 +261,53 @@ h1 {
 .izlemeListesiMain button:hover {
   background-color: white;
   color: #ff5722;
+}
+
+/* 320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV */
+
+@media (365px < width<760px) {
+  h1 {
+    font-size: 0.9rem;
+  }
+
+  .populerDizilerMain ul {
+    font-size: 0.8rem;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .pageNumberDiv {
+    font-size: 0.8rem;
+  }
+
+  .pageNumberDiv button {
+    font-size: 0.6rem;
+  }
+
+  .searchBaslik {
+    font-size: 0.8rem;
+  }
+
+  .diziCardBilgilerIsim,
+  .diziCardBilgilerUlke {
+    font-size: 0.8rem;
+  }
+
+  .diziCardBilgilerDiv {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .diziCardBilgilerDiv button {
+    font-size: 0.6rem;
+    margin: 0 auto;
+  }
+
+  .izlemeListesiIsim {
+    font-size: 0.8rem;
+  }
 }

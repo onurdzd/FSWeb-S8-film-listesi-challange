@@ -3,11 +3,13 @@ import React from "react";
 const IzlemeListesi = ({ listeDizi, sil }) => {
   return (
     <div className="izlemeListesiMain">
-      <h1>İzleme Listesi</h1>
+      <div>
+        <h1>İzleme Listesi</h1>
+      </div>
       {listeDizi !== "" ? (
         <div className="izlemeListesiAltDiv">
-          {listeDizi.map((elem) => (
-            <div className="izlemeListesiCardDiv">
+          {listeDizi.map((elem, index) => (
+            <div key={index} className="izlemeListesiCardDiv">
               <div className="izlemeListesiResimDiv">
                 <img src={elem.image_thumbnail_path} alt="ufak resim"></img>
               </div>
