@@ -1,20 +1,28 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Search from "./Search";
+import Detay from "./Components/Detay";
+import { Route, useHistory } from "react-router-dom";
+import DiziCard from "./Components/DiziCard";
+import PopulerDiziListesi from "./Components/PopulerDiziListesi";
+import IzlemeListesi from "./Components/IzlemeListesi";
 
 function App() {
   const [data, setData] = useState([]);
   const [secilenDizi, setSecilenDizi] = useState("");
   const [listeDizi, setListeDizi] = useState("");
+  const [secilenDiziDetay, setSecilenDiziDetay] = useState();
+  const [page, setPage] = useState(1);
+
+  let history = useHistory();
 
   useEffect(() => {
     axios
-      .get("https://www.episodate.com/api/most-popular?page=1")
+      .get(`https://www.episodate.com/api/most-popular?page=${page}`)
       .then((response) => {
         setData(response.data.tv_shows);
       });
-  }, []);
+  }, [page]);
 
   const ekle = () => {
     if (!listeDizi.includes(secilenDizi)) {
@@ -26,71 +34,48 @@ function App() {
     setListeDizi([...listeDizi.filter((item) => item.name !== elem.name)]);
   };
 
+  const detayaGit = () => {
+    axios
+      .get(`https://www.episodate.com/api/show-details?q=${secilenDizi.id}`)
+      .then((response) => setSecilenDiziDetay(response.data.tvShow));
+
+    history.push("/detay");
+  };
+
+  const geriDon = () => {
+    setSecilenDiziDetay("");
+    history.push("/");
+  };
+
+  const pageDegis = (newPage) => {
+    newPage > 0 && setPage(newPage);
+  };
+
   return (
     <div className="anaSayfaLayout">
-      <div className="populerDiziler">
-        <h1>Popüler Diziler</h1>
-        <ul className="populerDizilerIcerik">
-          {" "}
-          {data.map((item, index) => (
-            <div
-              key={index}
-              className="populerDiziIsim"
-              onClick={() => setSecilenDizi(item)}
-            >
-              <li>{item.name}</li>
-            </div>
-          ))}{" "}
-        </ul>
-      </div>
-      <div className="diziDetayMainDiv">
-        <Search
+      <Route exact path="/">
+        <PopulerDiziListesi
+          data={data}
+          setSecilenDizi={setSecilenDizi}
+          page={page}
+          pageDegis={pageDegis}
+        ></PopulerDiziListesi>
+        <DiziCard
           setSecilenDizi={setSecilenDizi}
           secilenDizi={secilenDizi}
           data={data}
-        ></Search>
-        {secilenDizi !== "" ? (
-          <div className="diziDetayCard">
-            <div className="posterDiv">
-              <img
-                src={secilenDizi.image_thumbnail_path}
-                alt="dizi resim"
-              ></img>
-            </div>
-            <div className="bilgilerDiv">
-              <div className="detayDizimIsim">{secilenDizi.name}</div>
-              <div className="detayDizimUlke">{secilenDizi.country}</div>
-              <button onClick={() => ekle()}>Ekle</button>
-            </div>
-          </div>
-        ) : (
-          <div className="detayUyari">
-            <h1>Dizi Detay</h1>
-            <br></br>
-            <br></br>
-            Önce popüler dizi seçimi yapın
-          </div>
-        )}
-      </div>
-      <div className="izlemeListesi">
-        <h1>İzleme Listesi</h1>
-        {listeDizi !== "" ? (
-          <div className="izlemeListesiFlex">
-            {listeDizi.map((elem) => (
-              <div>
-                <div className="izlemeListesiIsimDiv">
-                  <div className="izlemeListesiIsim">{elem.name}</div>
-                  <div>
-                    <button onClick={() => sil(elem)}>Sil</button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="izlemeListesiIsim">Henüz bir film eklemediniz</div>
-        )}
-      </div>
+          ekle={ekle}
+          detayaGit={detayaGit}
+        ></DiziCard>
+        <IzlemeListesi listeDizi={listeDizi} sil={sil}></IzlemeListesi>
+      </Route>
+      <Route exact path="/detay">
+        <Detay
+          secilenDizi={secilenDizi}
+          secilenDiziDetay={secilenDiziDetay}
+          geriDon={geriDon}
+        ></Detay>
+      </Route>
     </div>
   );
 }
