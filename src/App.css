@@ -35,7 +35,6 @@ h1 {
 .populerDizilerMain ul {
   height: 73vh;
   overflow: auto;
-  list-style: decimal-leading-zero;
 }
 
 .populerDizilerIcerik {
