@@ -6,6 +6,7 @@ import { Route, useHistory } from "react-router-dom";
 import DiziCard from "./Components/DiziCard";
 import PopulerDiziListesi from "./Components/PopulerDiziListesi";
 import IzlemeListesi from "./Components/IzlemeListesi";
+import DiziOlustur from "./Components/DiziOlustur";
 
 function App() {
   const [data, setData] = useState([]);
@@ -67,6 +68,7 @@ function App() {
           ekle={ekle}
           detayaGit={detayaGit}
           page={page}
+          history={history}
         ></DiziCard>
         <IzlemeListesi listeDizi={listeDizi} sil={sil}></IzlemeListesi>
       </Route>
@@ -76,6 +78,9 @@ function App() {
           secilenDiziDetay={secilenDiziDetay}
           geriDon={geriDon}
         ></Detay>
+      </Route>
+      <Route exact path="/diziolustur">
+        <DiziOlustur></DiziOlustur>
       </Route>
     </div>
   );

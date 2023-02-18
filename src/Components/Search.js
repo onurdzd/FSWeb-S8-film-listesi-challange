@@ -1,7 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-const Search = ({ setSecilenDizi, data, page }) => {
-  const [aramaSonuc, setAramaSonuc] = useState();
+const Search = ({
+  setSecilenDizi,
+  data,
+  page,
+  setAramaBulunamadi,
+  setAramaSonuc,
+  aramaSonuc,
+}) => {
   const handleSearch = (e) => {
     if (e.target.value) {
       setAramaSonuc(
@@ -9,14 +15,25 @@ const Search = ({ setSecilenDizi, data, page }) => {
           item.name.toLowerCase().includes(e.target.value.toLowerCase())
         )
       );
+      aramaSonucKontrol(e);
     } else {
       setAramaSonuc("");
+      setAramaBulunamadi("");
+      setSecilenDizi("");
     }
   };
 
-  useEffect(() => {
-    aramaSonuc ? setSecilenDizi(aramaSonuc) : setSecilenDizi("");
-  }, [aramaSonuc]);
+  const aramaSonucKontrol = (e) => {
+    console.log(aramaSonuc, e.target.value);
+    if (aramaSonuc) {
+      //arama inputu bos olunca dizi hala duruyor
+      setSecilenDizi(aramaSonuc);
+      setAramaBulunamadi("");
+    } else {
+      setAramaBulunamadi(`Aradığın dizi ${page}. sayfada yok`);
+      setSecilenDizi("");
+    }
+  };
 
   return (
     <form className="searchForm">

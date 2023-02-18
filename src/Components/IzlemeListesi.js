@@ -23,7 +23,7 @@ const IzlemeListesi = ({ listeDizi, sil }) => {
           ))}
         </div>
       ) : (
-        <div className="izlemeListesiIsim">Henüz bir film eklemediniz</div>
+        <div className="izlemeListesiIsim">Henüz bir film eklemedin</div>
       )}
     </div>
   );

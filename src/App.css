@@ -43,7 +43,6 @@ h1 {
 
 .populerDiziIsim {
   padding-bottom: 0.9rem;
-  font-weight: 400;
   cursor: pointer;
   max-width: 300px;
 }
@@ -88,10 +87,10 @@ h1 {
 
 .searchForm {
   margin: 0 auto;
-  margin-bottom: 10%;
   width: 60%;
   text-align: center;
   font-size: 1rem;
+  flex: 1;
 }
 
 .searchBaslik {
@@ -119,11 +118,12 @@ h1 {
 
 }
 
-.diziCardYoksaUyari {
+.diziCardUyari {
   font-size: 1.2rem;
   text-align: center;
   color: white;
   background-color: #ff000080;
+  margin-bottom: 20%;
 }
 
 .diziCardImgDiv {
@@ -262,6 +262,33 @@ h1 {
   color: #ff5722;
 }
 
+.diziOlusturButtonDiv {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.diziOlusturButtonDiv button {
+  background-color: #000000a1;
+  color: white;
+  font-size: 1rem;
+}
+
+.diziOlusturButtonDiv button:hover {
+  background-color: white;
+  color: #000000a1;
+  cursor: pointer;
+}
+
+.diziOlusturMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 /* 320px — 480px: Mobile devices
 481px — 768px: iPads, Tablets
 769px — 1024px: Small screens, laptops
@@ -290,6 +317,8 @@ h1 {
   .searchBaslik {
     font-size: 0.8rem;
   }
+
+
 
   .diziCardBilgilerIsim,
   .diziCardBilgilerUlke {
