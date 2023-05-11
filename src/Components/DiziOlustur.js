@@ -1,6 +1,14 @@
 import React from "react";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const DiziOlustur = () => {
+
+  const history=useHistory()
+
+  const geriDon = () => {
+    history.push("/");
+  };
+
   //handlechange eklenip data güncellenecek
   return (
     <div className="diziOlusturMain">
@@ -17,7 +25,7 @@ const DiziOlustur = () => {
       </div>
       <div className="diziOlusturAltDiv2">
         <button>Ekle</button>
-        <button>Geri Dön</button>
+        <button onClick={geriDon}>Geri Dön</button>
       </div>
     </div>
   );

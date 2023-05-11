@@ -290,7 +290,6 @@ h1 {
   width: 90%;
 }
 
-.diziOlusturAltDiv,
 .diziOlusturAltDiv {
   color: white;
   font-size: 1.2rem;
@@ -316,6 +315,7 @@ h1 {
   font-size: 1rem;
   width: 30%;
   margin: 1%;
+  cursor: pointer;
 }
 
 /* 320px — 480px: Mobile devices
